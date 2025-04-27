@@ -5,7 +5,7 @@ import 'package:native_json_api/native_json_api.dart';
 void main() {
   group('Run', () {
     test('run1', () {
-      try{
+      try {
         final $api = NativeJsonApi('PROGRAM.dll');
         $api.call('system', ['ping', '-n', '2', 'www.youtube.com']);
         dump($api.call('add2', [11, 22]));

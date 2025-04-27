@@ -1,19 +1,15 @@
 name: native_json_api
 description: native_json_api package project
-version: 2025.420.1247
+version: 2025.427.1650
 homepage:
 repository: https://github.com/dart-pkg/native_json_api
 
 environment:
   sdk: ^3.7.2
-
 dependencies:
-  dynamic_function: ^1.0.4
+  dynamic_function: ^2025.427.1341
   ffi: ^2.1.4
-
 dev_dependencies:
-  build_runner: ^2.4.15
-  embed: ^1.4.1
   lints: ^5.1.1
-  output: ^1.0.1
+  output: ^2025.426.2027
   test: ^1.25.15
