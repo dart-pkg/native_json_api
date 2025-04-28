@@ -27,7 +27,7 @@ class NativeJsonApi {
             .asFunction();
   }
 
-  dynamic call(String $name, dynamic $args) {
+  dynamic call$(String $name, dynamic $args) {
     String $input = convert.jsonEncode($args);
     final $namePtr = $name.toNativeUtf8();
     final $inputPtr = $input.toNativeUtf8();
@@ -42,12 +42,12 @@ class NativeJsonApi {
     return $result[0];
   }
 
-  late final dynamic call$ = DynamicFunction((
+  late final dynamic call = DynamicFunction((
     List<dynamic> $positional,
     Map<Symbol, dynamic> $named,
   ) {
     String $name = $positional[0];
     List $rest = $positional.sublist(1);
-    return call($name, $rest);
+    return call$($name, $rest);
   });
 }

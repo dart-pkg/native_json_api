@@ -13,3 +13,14 @@
 ## 2025.427.1650
 
 - Update dependencies
+
+## 2025.428.2037
+
+- Swapped method names of NativeJsonApi class (call and call$)
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.427.1650
++version: 2025.428.2037
+```
