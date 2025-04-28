@@ -24,3 +24,14 @@
 -version: 2025.427.1650
 +version: 2025.428.2037
 ```
+
+## 2025.428.2059
+
+- Added: int get bitnessObPointer
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.428.2037
++version: 2025.428.2059
+```

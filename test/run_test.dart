@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'dart:ffi' as ffi;
+//import 'dart:ffi' as ffi;
 import 'package:output/output.dart';
 import 'package:native_json_api/native_json_api.dart';
 
@@ -7,7 +7,7 @@ void main() {
   group('Run', () {
     test('run1', () {
       try {
-        int bitness = ffi.sizeOf<ffi.IntPtr>() * 8;
+        int bitness = bitnessObPointer;
         echo(bitness, r'bitness');
         final $api = NativeJsonApi('PROGRAM.x$bitness.dll');
         $api.call$('system', ['ping', '-n', '2', 'www.youtube.com']);

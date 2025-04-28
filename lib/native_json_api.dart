@@ -3,6 +3,11 @@ import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart' as ffi;
 import 'package:dynamic_function/dynamic_function.dart';
 
+/// Returns bit size of a IntPtr
+int get bitnessObPointer {
+  return ffi.sizeOf<ffi.IntPtr>() * 8;
+}
+
 class NativeJsonApi {
   final String $$dllName;
   late final ffi.DynamicLibrary $$lib;
