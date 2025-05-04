@@ -35,3 +35,14 @@
 -version: 2025.428.2037
 +version: 2025.428.2059
 ```
+
+## 2025.504.2108
+
+- Renamed bitnessObPointer ==> bitnessOfPointer (typo)
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.428.2059
++version: 2025.504.2108
+```

@@ -7,7 +7,7 @@ void main() {
   group('Run', () {
     test('run1', () {
       try {
-        int bitness = bitnessObPointer;
+        int bitness = bitnessOfPointer;
         echo(bitness, r'bitness');
         final $api = NativeJsonApi('PROGRAM.x$bitness.dll');
         $api.call$('system', ['ping', '-n', '2', 'www.youtube.com']);
