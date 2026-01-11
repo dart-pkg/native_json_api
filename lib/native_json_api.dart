@@ -16,6 +16,7 @@ class NativeJsonApi {
     ffi.Pointer<ffi.Utf8>,
   )
   $$callFunc;
+  late final void Function(ffi.Pointer<ffi.Utf8>) $$freeFunc;
 
   NativeJsonApi(this.$$dllName) {
     $$lib = ffi.DynamicLibrary.open($$dllName);
@@ -30,15 +31,24 @@ class NativeJsonApi {
               >
             >('Call')
             .asFunction();
+    $$freeFunc =
+        $$lib
+            .lookup<
+              ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Utf8>)>
+            >('Free')
+            .asFunction();
   }
 
   dynamic call$(String $name, dynamic $args) {
     String $input = convert.jsonEncode($args);
     final $namePtr = $name.toNativeUtf8();
     final $inputPtr = $input.toNativeUtf8();
-    dynamic $result = convert.jsonDecode(
-      $$callFunc($namePtr, $inputPtr).toDartString(),
-    );
+    // dynamic $result = convert.jsonDecode(
+    //   $$callFunc($namePtr, $inputPtr).toDartString(),
+    // );
+    final $resultPtr = $$callFunc($namePtr, $inputPtr);
+    dynamic $result = convert.jsonDecode($resultPtr.toDartString());
+    $$freeFunc($resultPtr);
     ffi.calloc.free($namePtr);
     ffi.calloc.free($inputPtr);
     if ($result is String) {
