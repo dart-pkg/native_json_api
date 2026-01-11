@@ -11,7 +11,7 @@ void main() {
         echo(bitness, r'bitness');
         //final $api = NativeJsonApi('PROGRAM.x$bitness.dll');
         //final $api = NativeJsonApi('C:/Users/user/.lt/cs-api/front/bin/release/net481/PROGRAM_native.dll');
-        final $api = NativeJsonApi('PROGRAM_native.dll');
+        final $api = NativeJsonApi('PROGRAM.native.dll');
         dump($api.call$('add2', [11, 22]));
         dump($api.call('add2', 111, 222));
         dump($api.call$('add2', [11, 22, 33]));
