@@ -10,7 +10,7 @@ void main() {
         int bitness = bitnessOfPointer;
         echo(bitness, r'bitness');
         //final $api = NativeJsonApi('PROGRAM.x$bitness.dll');
-        //final $api = NativeJsonApi('C:/Users/user/.lt/cs-api/bin/release/net472/PROGRAM_native.dll');
+        //final $api = NativeJsonApi('C:/Users/user/.lt/cs-api/front/bin/release/net481/PROGRAM_native.dll');
         final $api = NativeJsonApi('PROGRAM_native.dll');
         dump($api.call$('add2', [11, 22]));
         dump($api.call('add2', 111, 222));
